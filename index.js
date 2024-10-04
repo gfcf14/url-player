@@ -744,10 +744,10 @@ function togglePlayBack(pstats) {
 //changes the copy url GIF image
 export function changeCopyImage() {
   var option = $('#upselect').find(":selected").text();
-  if (option == 'youtube') $('#upcopy').attr('src', './youtube.gif');
-  else if (option == 'soundcloud') $('#upcopy').attr('src', './soundcloud.gif');
-  else if (option == 'vimeo') $('#upcopy').attr('src', './vimeo.gif');
-  else if (option == 'dailymotion') $('#upcopy').attr('src', './dailymotion.gif');
+  if (option == 'youtube') $('#upcopy').attr('src', 'https://i.imgur.com/GjILwRN.gif');
+  else if (option == 'soundcloud') $('#upcopy').attr('src', 'https://i.imgur.com/tisf20y.gif');
+  else if (option == 'vimeo') $('#upcopy').attr('src', 'https://i.imgur.com/k73Ai9G.gif');
+  else if (option == 'dailymotion') $('#upcopy').attr('src', 'https://i.imgur.com/cuZFqyi.gif');
 }
 
 //changes the guidelines for each platform
