@@ -235,11 +235,11 @@ function loadMediaScripts() {
   document.body.appendChild(dailyMotionScript);
 }
 
-export function browseTxtFile() {
+function browseTxtFile() {
   $('#upfilein').click();
 }
 
-export function toggleButton(type) {
+function toggleButton(type) {
   if (type == 'shuffle') {
     shuffle = !shuffle;
     if (shuffle) $('#upimgshuffle').attr('src', './buttons/active/shuffle.png');
@@ -267,7 +267,7 @@ function showError(type) {
   document.getElementById('cover').style.visibility = 'visible';
 }
 
-export function showHelp(type) {
+function showHelp(type) {
   if (type == 'get') $('#uphelp').css({opacity: 1, 'z-index': 100});
   else if (type == 'tips') $('#uptips').css({opacity: 1, 'z-index': 100});
   else if (type == 'guides') $('#upguidelines').css({opacity: 1, 'z-index': 100});
@@ -275,7 +275,7 @@ export function showHelp(type) {
   document.getElementById('cover').style.visibility = 'visible';
 }
 
-export function hideMessage() {
+function hideMessage() {
   if ($('#uperror').css('opacity') == 1) {
     $('#upfilein').val('');
     $('#uperror').css({'z-index': -1, opacity: 0});
@@ -286,7 +286,7 @@ export function hideMessage() {
   document.getElementById('cover').style.visibility = 'hidden';
 }
 
-export function createComponents() {
+function createComponents() {
   //the main menu is hidden to avoid conflicts with current play
   $('#upmainmenu').css({opacity: 0, height: '0px'});
   $('#upmainmenu').one('transitionend', function() {
@@ -629,7 +629,7 @@ function playCurrentSong() {
 }
 
 //Handles the going to the previous song
-export function prepPrev() {
+function prepPrev() {
 	//make sure the players are paused before going to the previous song
 	paused = false;
   inTransition = true;
@@ -639,7 +639,7 @@ export function prepPrev() {
 }
 
 //Handles the going to the next song
-export function prepNext() {
+function prepNext() {
 	//make sure the players are paused before going to the previous song
 	paused = false;
   inTransition = true;
@@ -657,7 +657,7 @@ function shuffleOrder() {
 }
 
 //Controls the status of the players to change to play/pause
-export function togglePlay() {
+function togglePlay() {
 	if (paused) {
 		if (activeIframe == 'youtube') youtubePlayer.playVideo();
 		else if (activeIframe == 'soundcloud') soundcloudPlayer.play();
@@ -742,7 +742,7 @@ function togglePlayBack(pstats) {
 }
 
 //changes the copy url GIF image
-export function changeCopyImage() {
+function changeCopyImage() {
   var option = $('#upselect').find(":selected").text();
   if (option == 'youtube') $('#upcopy').attr('src', 'https://i.imgur.com/GjILwRN.gif');
   else if (option == 'soundcloud') $('#upcopy').attr('src', 'https://i.imgur.com/tisf20y.gif');
@@ -751,7 +751,7 @@ export function changeCopyImage() {
 }
 
 //changes the guidelines for each platform
-export function changeGuidelines() {
+function changeGuidelines() {
   var option = $('#upsecguid').find(":selected").text();
   if (option == 'youtube') $('#guidelines').html(youtubeGuidelines);
   else if (option == 'soundcloud') $('#guidelines').html(soundcloudGuidelines);
